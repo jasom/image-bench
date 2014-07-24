@@ -1,0 +1,25 @@
+Builds and tests startup time of lisp images.
+
+Creates a bare and "big" image.  The big image just loads the drakma system.
+
+Requrements:
+
+* A working cl-launch installed and symlinked to /usr/bin/cl
+* Quicklisp (only used for drakma; it could be made to work without fairly
+  easily)
+
+To run:
+
+edit "config" to contain a list of lisp implementations you wish to test.  It
+is parsed by a bourne style shell and passed to cl-launch.
+
+Then just run the executable "do"  By default it runs 100 iterations of each test, so will take a while (particularly if ecl is being tested).
+
+Output is:
+
+A header for each lisp version being tested
+
+Then SIZE EXENAME CPU% WALL-TIME
+
+/bin/true is included as a reference point.
+
